@@ -17,30 +17,29 @@ public class DriverFactory {
         boolean headless = Config.getBool("headless");
 
         switch (browser.toLowerCase()) {
-
             case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions fo = new FirefoxOptions();
-                if (headless) {
-                    fo.addArguments("-headless");
-                }
+                if (headless) fo.addArguments("-headless");
+
+                fo.addPreference("dom.webnotifications.enabled", false);
+                fo.addPreference("dom.push.enabled", false);
+
                 return new FirefoxDriver(fo);
             }
-
             default -> {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions co = new ChromeOptions();
 
-                // ✅ HANDLE BROWSER NOTIFICATION POPUP (ALLOW)
+                if (headless) co.addArguments("--headless=new");
+                co.addArguments("--start-maximized");
+
                 Map<String, Object> prefs = new HashMap<>();
-                prefs.put("profile.default_content_setting_values.notifications", 1); // 1 = Allow, 2 = Block
+                prefs.put("profile.default_content_setting_values.notifications", 2);
                 co.setExperimentalOption("prefs", prefs);
 
-                if (headless) {
-                    co.addArguments("--headless=new");
-                }
-
-                co.addArguments("--start-maximized");
+                co.addArguments("--disable-notifications");
+                co.addArguments("--disable-popup-blocking");
 
                 return new ChromeDriver(co);
             }

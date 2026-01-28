@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 
 public class FBPostPage extends BasePage {
 
-    // Locators (from your message)
     private final By postBox =
             By.xpath("//div[@class='xi81zsa x1lkfr7t xkjl1po x1mzt3pk xh8yej3 x13faqbe']//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6']");
 

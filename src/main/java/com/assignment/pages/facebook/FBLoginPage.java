@@ -23,7 +23,7 @@ public class FBLoginPage extends BasePage {
         waits.visible(emailField).sendKeys(email);
         waits.visible(passwordField).sendKeys(password);
         waits.clickable(loginButton).click();
-        // ⏸ Pause for manual CAPTCHA / verification
+        // Pause for manual CAPTCHA
         try {
             System.out.println("⏸ Please complete CAPTCHA / verification manually...");
             Thread.sleep(30000); // 30 seconds

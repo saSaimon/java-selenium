@@ -27,4 +27,6 @@ public class Waits {
     public void untilTrue(ExpectedCondition<Boolean> condition) {
         wait.until(condition);
     }
+
+
 }

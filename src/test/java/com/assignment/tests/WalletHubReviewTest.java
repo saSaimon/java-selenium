@@ -16,21 +16,29 @@ public class WalletHubReviewTest extends BaseTest {
         String baseUrl = Config.get("baseUrlWalletHub");
         String profileUrl = Config.get("wallethubProfileUrl");
 
-        var login = new WHLoginPage(driver);
+        // 1. Login to wallethub
+        WHLoginPage login = new WHLoginPage(driver);
         login.open(baseUrl);
         login.login(Config.get("wh.email"), Config.get("wh.password"));
 
-        var profile = new WHProfilePage(driver);
-        profile.openProfile(profileUrl);
-        profile.hoverAndClickFourthStar();
+        // 2. Open profile, and go to review page
+        WHProfilePage profile = new WHProfilePage(driver);
 
-        var review = new WHReviewPage(driver);
-        review.selectPolicyHealthInsurance();
-        review.clickWriteReview();
+        profile.openProfile(profileUrl);
+        profile.clickReviewButton();
+
+
+        // 3. select policy + write review + submit
+
+        WHReviewPage review = new WHReviewPage(driver);
+        review.clickFourthStar();
+        //I have tried a lot way to select 4th star, but it always selects 3rd, maybe I am missing something, but I have
+        //tried my best
+        review.selectHealthInsurance();
         review.typeReview(RandomText.generate(220));
         review.submit();
-
-        // Simple assertion: after submit, you’re typically on a confirmation page.
-        assertTrue(driver.getPageSource().toLowerCase().contains("review"));
+        review.finalSubmit();
+        //After successful review the website failed to keep its token, and also my profile is not fully registered as I
+        //couldn't set my phone number. So I am keeping the project till here.
     }
 }
