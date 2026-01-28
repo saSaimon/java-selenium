@@ -1,11 +1,19 @@
 
-# WalletHub Review Automation (Selenium + Java)
+# Automation (Selenium + Java)
 
-This project automates submitting a review on WalletHub using **Selenium WebDriver**, **Java**, and **JUnit 5**.  
+This project automates submitting a project using **Selenium WebDriver**, **Java**, and **JUnit 5**.
+
 The framework follows **Page Object Model (POM)** and avoids fragile locators.
 
 
+
 ## Tech Stack
+This project automates submitting a project using **Selenium WebDriver**, **Java**, and **JUnit 5**.
+
+The framework follows **Page Object Model (POM)** and avoids fragile locators.
+
+
+
 
 - Java (JDK 17+)
 - Selenium WebDriver 4.x
@@ -17,26 +25,30 @@ The framework follows **Page Object Model (POM)** and avoids fragile locators.
 
 ## Project Structure
 
+
+<pre>
 Selenium-Java/
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── com.assignment
-│   │           ├── core
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com.assignment/
+│   │           ├── core/
 │   │           │   ├── BasePage.java
 │   │           │   └── RandomText.java
-│   │           └── pages
-│   │               └── wallethub
+│   │           └── pages/
+│   │               └── wallethub/
 │   │                   ├── WHLoginPage.java
 │   │                   ├── WHProfilePage.java
 │   │                   └── WHReviewPage.java
-│   └── test
-│       └── java
-│           └── com.assignment.tests
+│   └── test/
+│       └── java/
+│           └── com.assignment.tests/
 │               ├── BaseTest.java
 │               └── WalletHubReviewTest.java
 ├── pom.xml
 └── README.md
+</pre>
+
 ---
 
 ## Configuration & Credentials
@@ -132,7 +144,7 @@ Best Practices Used
 
 Author
 
-WalletHub Automation Assignment
+Sadiqul Alam
 Selenium + Java + JUnit 5
 
 ---
