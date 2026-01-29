@@ -157,7 +157,7 @@ Best Practices Used
 Author
 
 Sadiqul Alam
-Selenium + Java + JUnit 5
+Sr. QA Engineer
 
 ---
 
