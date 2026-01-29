@@ -31,20 +31,27 @@ Selenium-Java/
 ├── src/
 │   ├── main/
 │   │   └── java/
-│   │       └── com.assignment/
-│   │           ├── core/
-│   │           │   ├── BasePage.java
-│   │           │   └── RandomText.java
-│   │           └── pages/
-│   │               └── wallethub/
-│   │                   ├── WHLoginPage.java
-│   │                   ├── WHProfilePage.java
-│   │                   └── WHReviewPage.java
+│   │       ├── config/
+│   │       │   ├── Config.java
+│   │       │   └── DriverFactory.java
+│   │       ├── core/
+│   │       │   ├── BasePage.java
+│   │       │   ├── RandomText.java
+│   │       │   └── Waits.java
+│   │       ├── pages/
+│   │       │   └── [feature_name]/      <-- Replace with your generic site folder
+│   │       │       ├── LoginPage.java
+│   │       │       └── ProfilePage.java
+│   │       └── org.example/
+│   │           └── Main.java
+│   ├── resources/
+│   │   ├── config.properties
+│   │   └── logback.xml
 │   └── test/
 │       └── java/
 │           └── com.assignment.tests/
 │               ├── BaseTest.java
-│               └── WalletHubReviewTest.java
+│               └── SubmitReviewTest.java
 ├── pom.xml
 └── README.md
 </pre>
