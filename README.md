@@ -30,32 +30,37 @@ The framework follows **Page Object Model (POM)** and avoids fragile locators.
 Selenium-Java/
 ├── src/
 │   ├── main/
-│   │   └── java/
-│   │       ├── config/
-│   │       │   ├── Config.java
-│   │       │   └── DriverFactory.java
-│   │       ├── core/
-│   │       │   ├── BasePage.java
-│   │       │   ├── RandomText.java
-│   │       │   └── Waits.java
-│   │       ├── pages/
-│   │       │   └── [feature_name]/      <-- Replace with your generic site folder
-│   │       │       ├── LoginPage.java
-│   │       │       └── ProfilePage.java
-│   │       └── org.example/
-│   │           └── Main.java
-│   ├── resources/
-│   │   ├── config.properties
-│   │   └── logback.xml
+│   │   ├── java/
+│   │   │   └── com.assignment/
+│   │   │       ├── config/
+│   │   │       │   ├── Config.java
+│   │   │       │   └── DriverFactory.java
+│   │   │       ├── core/
+│   │   │       │   ├── BasePage.java
+│   │   │       │   ├── RandomText.java
+│   │   │       │   └── Waits.java
+│   │   │       └── pages/
+│   │   │           ├── facebook/
+│   │   │           │   ├── FBLoginPage.java
+│   │   │           │   └── FBPostPage.java
+│   │   │           └── wallethub/
+│   │   │               ├── WHLoginPage.java
+│   │   │               ├── WHProfilePage.java
+│   │   │               └── WHReviewPage.java
+│   │   ├── resources/
+│   │   │   ├── config.properties
+│   │   │   └── logback.xml
+│   │   └── org.example/
+│   │       └── Main.java
 │   └── test/
 │       └── java/
 │           └── com.assignment.tests/
 │               ├── BaseTest.java
-│               └── SubmitReviewTest.java
+│               ├── FacebookPostTest.java
+│               └── WalletHubReviewTest.java
 ├── pom.xml
 └── README.md
 </pre>
-
 ---
 
 ## Configuration & Credentials
